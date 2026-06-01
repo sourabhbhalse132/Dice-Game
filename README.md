@@ -1,6 +1,7 @@
 # 🎲 Dice Game
 
 A fun and interactive Dice Game built with React where players test their luck by selecting a number and rolling the dice. The game features score tracking, responsive design, and an intuitive user experience.
+live link:- https://dicegam3.netlify.app/
 
 ---
 
@@ -37,23 +38,7 @@ A fun and interactive Dice Game built with React where players test their luck b
 - Vite
 
 ---
-
-## 📂 Project Structure
-
-```text
-Dice-Game/
-├── public/
-├── src/
-│   ├── Components/
-│   ├── Pages/
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── package.json
-├── vite.config.js
-└── README.md
-```
-
+ 
 ## ⚙️ Installation
 
 Clone the repository:
