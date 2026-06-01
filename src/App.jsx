@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import GamePlay from "./components/GamePlay";
 import StartGame from "./components/StartGame";
 import Footer from "./components/Footer";
@@ -7,15 +6,17 @@ import Footer from "./components/Footer";
 const App = () => {
   const [isGameStarted, setIsGameStarted] = useState(false);
 
-  const toggleGamePlay = () => {
-    setIsGameStarted((prev) => !prev);
-  };
   return (
-    <>
-      {isGameStarted ? <GamePlay /> : <StartGame toggle={toggleGamePlay} />}
-      {/* <Footer /> */}
+    <div className="app-container">
+      <main className="main-content">
+        {isGameStarted ? (
+          <GamePlay onHome={() => setIsGameStarted(false)} />
+        ) : (
+          <StartGame toggle={() => setIsGameStarted(true)} />
+        )}
+      </main>
       <Footer onHomeClick={() => setIsGameStarted(false)} />
-    </>
+    </div>
   );
 };
 

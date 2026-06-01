@@ -6,22 +6,34 @@ import { useState } from "react";
 const GamePlay = () => {
   const [score, setScore] = useState(0);
   const [selectedNumber, setSelectedNumber] = useState();
+  const [error, setError] = useState("");
+
+  const resetScore = () => {
+    setScore(0);
+    setSelectedNumber(undefined);
+    setError("");
+  };
 
   return (
-    <>
-      <TotalScore score={score} />
-      <NumberSelector
-        selectedNumber={selectedNumber}
-        setSelectedNumber={setSelectedNumber}
-      />
-
+    <div className="gameplay-wrapper">
+      <header className="gameplay-header">
+        <TotalScore score={score} />
+        <NumberSelector
+          error={error}
+          setError={setError}
+          selectedNumber={selectedNumber}
+          setSelectedNumber={setSelectedNumber}
+        />
+      </header>
+      
       <RollDice
         selectedNumber={selectedNumber}
         setSelectedNumber={setSelectedNumber}
-        score={score}
         setScore={setScore}
+        setError={setError}
+        resetScore={resetScore}
       />
-    </>
+    </div>
   );
 };
 
